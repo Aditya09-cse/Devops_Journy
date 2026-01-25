@@ -17,3 +17,9 @@
    - systemctl list-units --type=service
 - systemctl status [name] | 	Shows if the process is running, its PID, and recent logs.
   
+# List 5 commands you would use daily
+  - mkdir => to create a file or directory.
+  - cp/mv/rm => to copy/move/rename/remove file or directory.
+  - ip addr => to find ip address
+  - ping => to ping a website
+  - free / df -h => to see memory/storage used or how much left.
