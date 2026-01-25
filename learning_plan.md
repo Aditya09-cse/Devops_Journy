@@ -1,4 +1,4 @@
-# 90days DevOps journy
+# 90days DevOps journy -- DAY 01
 
 - current level - student.
 - goals for next 90 days - to become industry ready in next 90 days , by creating projects and post blogs.
