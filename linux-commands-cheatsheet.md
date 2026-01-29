@@ -1,5 +1,5 @@
-# Cheetsheet for linux commands
-# File System
+# 🐧 Cheetsheet for linux commands
+# 📁 File System
   - ls => list files
   - ls -l => detailes list (owner of file , size of file)
   - ls -a => show hidden files
@@ -17,7 +17,7 @@
   -  df -sh dir => folder size
   -  free => used to display used and free memory of your system
 
-# Process Management
+# ⚙️ Process Management
   - ps aux => list all process.
   - top => live process monitor
   - htop => interactive monitor ( better than top)
@@ -26,7 +26,7 @@
   - pKill name => kill by processs name
   - nohup cmd & => run even after the logout
 
-# Networking / Troubleshooting
+# 🌐 Networking / Troubleshooting
   - ip a => show ip address
   - ping host => test connectivity
   - curl url => fetch url / test HTTP
