@@ -1,4 +1,4 @@
-# cheetsheet for linux commands
+# Cheetsheet for linux commands
 # File System
   - ls => list files
   - ls -l => detailes list (owner of file , size of file)
@@ -37,4 +37,12 @@
   - scp file user@host:/path
   - nslookup domain => DNS lookup
   - traceroute host => path to host
+
+# Why This Matters for DevOps
+Real production issues are solved at the command line.
+
+The faster you can inspect logs and network issues, the faster you can:
+  - Restore service
+  - Reduce downtime
+  - Gain trust as an operator
   
