@@ -16,3 +16,4 @@ This repo was made to keep posted about my DevOps Journy
 - Day01 - learning_plan.md
 - Day02 - linux-architecture-notes.md
 - Day03 - linux-commands-cheatsheet.md
+- Day04 - linux-practice.md
