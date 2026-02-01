@@ -18,3 +18,4 @@ This repo was made to keep posted about my DevOps Journy
 - Day03 - linux-commands-cheatsheet.md
 - Day04 - linux-practice.md
 - Day05 - linux-troubleshooting-runbook.md
+- Day 06 - file-io-practice.md
