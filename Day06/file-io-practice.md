@@ -43,4 +43,4 @@ tail
 ```
   - used to print lines from last
   - by default print last 10 lines
-  - eg. tail -n 2 notes.txt -> print last 2 lines of notes.txt
+  - eg. tail -n 2 notes.txt -> print last 2 lines of notes.txt.
