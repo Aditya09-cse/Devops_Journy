@@ -121,5 +121,25 @@ done
 
 echo "All packages processed successfully"
 ```
+### Task 5 – Error Handling
+#### safe_script.sh
+```
+#!/bin/bash
 
+set -e
+
+mkdir /tmp/devops-test || echo "Directory already exists"
+
+cd /tmp/devops-test || echo "Failed to enter directory"
+
+touch testfile.txt || echo "Failed to create file"
+
+echo "All steps completed successfully!"
+```
+
+
+### 🧠 What I Learned (Key Takeaways)
+ - How to use for and while loops in shell scripting.
+ - How to handle command-line arguments using $1, $#, $@, $0.
+ - How to add basic error handling using set -e and ||.
 
