@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+
+  mysql-db-1:
+    image: mysql:8.0
+    restart: on-failure
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: testdb
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - three-tier
+    labels:
+      tier: database
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-proot123"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+
+  redis-1:
+    image: redis:6.2
+    restart: always
+    networks:
+      - three-tier
+    labels:
+      tier: cache
+
+
+  web-app-1:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      mysql-db-1:
+        condition: service_healthy
+      redis-1:
+        condition: service_started
+    networks:
+      - three-tier
+    labels:
+      tier: web
+
+
+volumes:
+  mysql_data:
+
+
+networks:
+  three-tier:
+    driver: bridge
