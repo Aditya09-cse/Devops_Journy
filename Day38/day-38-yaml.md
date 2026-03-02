@@ -83,10 +83,13 @@ Write in your notes: When would you use `|` vs `>`?
 
       - **Error* -> Map keys must be unique at line 18, column 5
 
+
+
 4. Fix it and validate again
+
     <img width="763" height="340" alt="image" src="https://github.com/user-attachments/assets/ff3324df-b1b1-4c90-b792-dd0e15d69961" />
 
 
---
+---
 
 
