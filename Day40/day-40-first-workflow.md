@@ -20,42 +20,80 @@ Push it. Go to the **Actions** tab on GitHub and watch it run.
 ---
 
 ### Task 3: Understand the Anatomy
-Look at your workflow file and write in your notes what each key does:
-- `on:`
-  ---
-  
-- `jobs:`
+# GitHub Actions Workflow Key Components
 
-  A job is a unit of work inside a stage.
+## `on:`
+Defines the trigger events that cause the workflow to run.
 
-  A job:
-  - Runs on a runner
-  - Contains multiple steps
-  - Executes a specific task (e.g., build app, run tests)
-
-Each job runs independently unless configured otherwise.
+**Examples:**
+- `push` — runs on every push to the repository  
+- `pull_request` — runs when a PR is opened or updated  
+- `schedule` — runs on a schedule (cron jobs)  
+- `workflow_dispatch` — allows manual triggering  
 
 ---
 
-- `runs-on:`
-- `steps:`
-    A step is a single command or action inside a job.
+## `jobs:`
+Defines one or more jobs that run as part of the workflow.
 
-  Examples:
-    - Install dependencies
-    - Run tests
-    - Build Docker image
-    - Upload artifact
+- Each job runs in its own runner instance.  
+- Jobs can run in parallel or sequentially depending on your configuration.
 
-  Steps are the smallest executable unit in a pipeline.
 ---
 
-- `uses:`
-  
-  ---
-- `run:`
+## `runs-on:`
+Specifies the type of machine (runner) where the job executes.
 
-  ---
-- `name:` (on a step)
+**Common options:**
+- `ubuntu-latest` — Linux runner  
+- `windows-latest` — Windows runner  
+- `macos-latest` — macOS runner  
 
+Self-hosted runners are also supported.
+
+---
+
+## `steps:`
+An ordered list of tasks that execute within a job.
+
+- Each step runs sequentially in the same runner.  
+- Steps can use actions, run shell commands, or execute scripts.
+
+---
+
+## `uses:`
+Specifies a reusable action (pre-built workflow code) to run.
+
+**Format:**
+owner/repo@version
+
+
+**Example:**
+```yaml
+uses: actions/checkout@v4
+```
+ - Checks out your repository code
+ - Actions can be from GitHub, the Marketplace, or a custom repository
+
+## `run:`
+Executes a shell command directly on the runner
+
+**Example:**
+```
+run: echo "Hello from GitHub Actions!"
+```
+
+- Runs in bash on Linux/macOS
+- Runs in PowerShell on Windows
+
+## `name: (on a step`
+Provides a human-readable label for a step.
+
+- Appears in the Actions tab logs
+- kes workflows easier to understand
+
+**Example:**
+  ```
+  name: Print greeting message
+  ```
 ---
