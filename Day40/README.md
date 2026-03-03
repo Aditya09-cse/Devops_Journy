@@ -1,94 +1,100 @@
-# Day 39 – What is CI/CD?
+# Day 40 – Your First GitHub Actions Workflow
 
 ## Task
-Before writing a single pipeline, understand **why CI/CD exists** and what it actually does.
+Today you write your **first GitHub Actions pipeline** and watch it run in the cloud.
 
-Today is a research and diagram day — no pipelines yet. Get the concepts right first.
+This is the moment CI/CD stops being a concept and becomes real.
 
 ---
 
 ## Expected Output
-- A markdown file: `day-39-cicd-concepts.md`
-- A pipeline diagram (hand-drawn or text-based)
+- A workflow file: `.github/workflows/hello.yml`
+- A markdown file: `day-40-first-workflow.md`
+- Screenshot of your first green pipeline run
 
 ---
 
 ## Challenge Tasks
 
-### Task 1: The Problem
-Think about a team of 5 developers all pushing code to the same repo manually deploying to production.
-
-Write in your notes:
-1. What can go wrong?
-2. What does "it works on my machine" mean and why is it a real problem?
-3. How many times a day can a team safely deploy manually?
+### Task 1: Set Up
+1. Create a new **public** GitHub repository called `github-actions-practice`
+2. Clone it locally
+3. Create the folder structure: `.github/workflows/`
 
 ---
 
-### Task 2: CI vs CD
-Research and write short definitions (2-3 lines each):
-1. **Continuous Integration** — what happens, how often, what it catches
-2. **Continuous Delivery** — how it's different from CI, what "delivery" means
-3. **Continuous Deployment** — how it differs from Delivery, when teams use it
+### Task 2: Hello Workflow
+Create `.github/workflows/hello.yml` with a workflow that:
+1. Triggers on every `push`
+2. Has one job called `greet`
+3. Runs on `ubuntu-latest`
+4. Has two steps:
+   - Step 1: Check out the code using `actions/checkout`
+   - Step 2: Print `Hello from GitHub Actions!`
 
-Write one real-world example for each.
+Push it. Go to the **Actions** tab on GitHub and watch it run.
 
----
-
-### Task 3: Pipeline Anatomy
-A pipeline has these parts — write what each one does:
-- **Trigger** — what starts the pipeline
-- **Stage** — a logical phase (build, test, deploy)
-- **Job** — a unit of work inside a stage
-- **Step** — a single command or action inside a job
-- **Runner** — the machine that executes the job
-- **Artifact** — output produced by a job
+**Verify:** Is it green? Click into the job and read every step.
 
 ---
 
-### Task 4: Draw a Pipeline
-Draw a CI/CD pipeline for this scenario:
-> A developer pushes code to GitHub. The app is tested, built into a Docker image, and deployed to a staging server.
-
-Include at least 3 stages. Hand-drawn and photographed is perfectly fine.
+### Task 3: Understand the Anatomy
+Look at your workflow file and write in your notes what each key does:
+- `on:`
+- `jobs:`
+- `runs-on:`
+- `steps:`
+- `uses:`
+- `run:`
+- `name:` (on a step)
 
 ---
 
-### Task 5: Explore in the Wild
-1. Open any popular open-source repo on GitHub (Kubernetes, React, FastAPI — pick one you know)
-2. Find their `.github/workflows/` folder
-3. Open one workflow YAML file
-4. Write in your notes:
-   - What triggers it?
-   - How many jobs does it have?
-   - What does it do? (best guess)
+### Task 4: Add More Steps
+Update `hello.yml` to also:
+1. Print the current date and time
+2. Print the name of the branch that triggered the run (hint: GitHub provides this as a variable)
+3. List the files in the repo
+4. Print the runner's operating system
+
+Push again — watch the new run.
+
+---
+
+### Task 5: Break It On Purpose
+1. Add a step that runs a command that will **fail** (e.g., `exit 1` or a misspelled command)
+2. Push and observe what happens in the Actions tab
+3. Fix it and push again
+
+Write in your notes: What does a failed pipeline look like? How do you read the error?
 
 ---
 
 ## Hints
-- CI/CD is a practice, not just a tool
-- GitHub Actions, Jenkins, GitLab CI, CircleCI — all are tools that implement CI/CD
-- A pipeline failing is not a problem — it's CI/CD doing its job
+- Workflow files live in `.github/workflows/` and must end in `.yml`
+- `uses: actions/checkout@v4` checks out your code onto the runner
+- `run:` executes shell commands
+- GitHub provides built-in variables like `${{ github.ref_name }}` for branch name
+- Every push triggers a new run — check the Actions tab
 
 ---
 
 ## Documentation
-Create `day-39-cicd-concepts.md` with:
-- Your CI vs CD vs CD definitions
-- Pipeline anatomy notes
-- Your pipeline diagram
-- What you found in the open-source repo
+Create `day-40-first-workflow.md` with:
+- Your workflow YAML
+- Screenshot of the green run
+- What each `on:`, `jobs:`, `steps:` key does (your own words)
 
 ---
 
 ## Submission
-1. Add your `day-39-cicd-concepts.md` to `2026/day-39/`
+1. Add `day-40-first-workflow.md` to `2026/day-40/`
 2. Commit and push to your fork
 
 ---
 
 ## Learn in Public
-Share your pipeline diagram on LinkedIn — even a rough hand-drawn one gets engagement.
+Share your first green pipeline screenshot on LinkedIn. That green checkmark hits different.
 
 `#90DaysOfDevOps` `#DevOpsKaJosh` `#TrainWithShubham`
 
