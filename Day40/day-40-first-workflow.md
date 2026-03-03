@@ -97,3 +97,58 @@ Provides a human-readable label for a step.
   name: Print greeting message
   ```
 ---
+### Task 4: Add More Steps
+Update `hello.yml` to also:
+1. Print the current date and time
+2. Print the name of the branch that triggered the run (hint: GitHub provides this as a variable)
+3. List the files in the repo
+4. Print the runner's operating system
+
+Push again — watch the new run.
+
+   <img width="1350" height="742" alt="image" src="https://github.com/user-attachments/assets/ecd11d2d-f2f8-41c5-b828-12169694242a" />
+
+---
+
+### Task 5: Break It On Purpose
+1. Add a step that runs a command that will **fail** (e.g., `exit 1` or a misspelled command)
+2. Push and observe what happens in the Actions tab
+3. Fix it and push again
+
+   <img width="1316" height="587" alt="image" src="https://github.com/user-attachments/assets/f1ad9b0c-a17b-4bcb-91bb-271fc4ddaf69" />
+
+### Write in your notes: What does a failed pipeline look like? How do you read the error?
+
+## Visual Indicators
+
+- Red ✗ (X mark) in the **Actions** tab instead of a green checkmark  
+- The workflow run shows a **FAILED** status (red badge)  
+- The job name is highlighted in red  
+- The specific step that failed is marked with a red ✗  
+
+---
+
+## How to Read the Error
+
+1. Go to the **Actions** tab → Click on the failed workflow run  
+2. Identify the failing job (shown in red)  
+3. Click the failed job to expand it  
+4. Scroll through the step logs to find the red ✗ step  
+5. Read the error message — it will show:
+   - The command that failed  
+   - The exit code (typically non-zero, like `exit 1`)  
+   - Any `stderr` / `stdout` messages explaining what went wrong  
+
+---
+
+## Common Error Patterns
+
+- `exit 1` → Command explicitly failed  
+- `command not found` → Typo in command or missing tool  
+- `Timeout` → Step took too long to execute  
+- `Permission denied` → Insufficient permissions for the operation  
+- `Syntax error` → Invalid YAML in your workflow file  
+
+
+
+---
