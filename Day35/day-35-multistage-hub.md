@@ -33,5 +33,75 @@ Write in your notes: Why is the multi-stage image so much smaller?
 4. Push it to Docker Hub
 5. Pull it on a different machine (or after removing locally) to verify
 
+
+   --- 
+  <img width="880" height="499" alt="image" src="https://github.com/user-attachments/assets/df6b1651-4f4f-4e7f-aa72-3be6659983e6" />
+
+
+  ---
+  <img width="1029" height="526" alt="image" src="https://github.com/user-attachments/assets/12cd6050-11da-4059-9d33-b576e5d1b984" />
+  
+
 ---
+  <img width="997" height="523" alt="image" src="https://github.com/user-attachments/assets/1ad98f04-f3d9-4ba8-9b54-072f180de59d" />
+  
+
+---
+  <img width="812" height="557" alt="image" src="https://github.com/user-attachments/assets/7b7d1586-1ab5-4c79-a132-721f2f6bb6bf" />
+
+
+---
+
+### Task 4: Docker Hub Repository
+1. Go to Docker Hub and check your pushed image
+2. Add a **description** to the repository
+3. Explore the **tags** tab — understand how versioning works
+4. Pull a specific tag vs `latest` — what happens?
+
+<img width="1006" height="478" alt="image" src="https://github.com/user-attachments/assets/d6b9f02c-8daf-45cb-9304-67172cf7bbc6" />
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# pending
+### Task 5: Image Best Practices
+Apply these to one of your images and rebuild:
+1. Use a **minimal base image** (alpine vs ubuntu — compare sizes)
+2. **Don't run as root** — add a non-root USER in your Dockerfile
+3. Combine `RUN` commands to **reduce layers**
+4. Use **specific tags** for base images (not `latest`)
+
+Check the size before and after.
+
+---
+
+
+
+
+
+
+
+
+
+
 
