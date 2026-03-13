@@ -52,5 +52,20 @@ Create `.github/workflows/matrix.yml` that:
 
 Then extend the matrix to also include 2 operating systems — how many total jobs run now?
 
+ <img width="1072" height="592" alt="image" src="https://github.com/user-attachments/assets/e8fa39ab-e950-45e1-b7ae-d59f52c25385" />
+
+
+---
+
+### Task 5: Exclude & Fail-Fast
+1. In your matrix, **exclude** one specific combination (e.g., Python 3.10 on Windows)
+2. Set `fail-fast: false` — trigger a failure in one job and observe what happens to the rest
+
+   <img width="1117" height="491" alt="image" src="https://github.com/user-attachments/assets/1f4d077e-8d9d-45ff-8299-a3bdd40f8738" />
+
+3. Write in your notes: What does `fail-fast: true` (the default) do vs `false`?
+   - `fail-fast: true` -> If any job in the matrix fails, GitHub immediately cancels the remaining running matrix jobs
+   - `fail-fast: false` -> If a job fails, GitHub still runs the remaining jobs.
+
 ---
 
